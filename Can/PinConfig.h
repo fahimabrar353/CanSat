@@ -10,26 +10,13 @@
 #include <SPI.h>
 #include <nRF24L01.h>
 #include <RF24.h>
-//#include <Wire.h>
+#include "Data_Structs.h"
 
 
 RF24 radio(7, 8);   // nRF24L01 (CE, CSN)
 const byte address[6] = "00001"; // Address
 // Max size of this struct is 32 bytes - NRF24L01 buffer limit
-struct Data_Package {
-  double temperature;
-  double pressure;
-  byte Alt;
-  byte Roll;
-  byte Pitch;
-  byte Yaw;
-  byte SCount;
-  float Lat;
-  float Longi;
-  byte Speed;
-  float Voltage;
 
-};
 Data_Package data;
 //-------------------------------------------------------------------
 MPU6050 accelgyro;
