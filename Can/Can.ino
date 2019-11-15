@@ -81,21 +81,23 @@ void loop() {
 
 
   Serial.print(roll);
-  data.Roll=roll;
+  data.Roll=(100*roll);
   Serial.print("\t");
   Serial.print(pitch);
-  data.Pitch=pitch;
+  data.Pitch=(100*pitch);
   Serial.print("\t");
   Serial.print(yaw);
-  data.Yaw=yaw;
+  data.Yaw=(100*yaw);
   Serial.print("\t\t");
   Serial.println(deltat, 6);
-  Serial.println();
+  
+  Serial.println(sizeof(Data_Package));
   bat_loop();
 
 
   // Send the whole data from the structure to the receiver
   radio.write(&data, sizeof(Data_Package));
+  Serial.println(sizeof(Data_Package));
 
 
 
