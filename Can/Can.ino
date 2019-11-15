@@ -81,13 +81,17 @@ void loop() {
 
 
   Serial.print(roll);
+  data.Roll=roll;
   Serial.print("\t");
   Serial.print(pitch);
+  data.Pitch=pitch;
   Serial.print("\t");
   Serial.print(yaw);
+  data.Yaw=yaw;
   Serial.print("\t\t");
   Serial.println(deltat, 6);
   Serial.println();
+  bat_loop();
 
 
   // Send the whole data from the structure to the receiver

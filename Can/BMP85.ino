@@ -64,8 +64,8 @@ void BMP_loop(void)
     float temperature;
     bmp.getTemperature(&temperature);
     Serial.print("Temperature: ");
-    
-    data.temperature=temperature;
+
+    data.temperature = temperature;
     Serial.print(data.temperature);
     Serial.print(" C ");
 
@@ -73,8 +73,10 @@ void BMP_loop(void)
     /* Update this next line with the current SLP for better results      */
     float seaLevelPressure = SENSORS_PRESSURE_SEALEVELHPA;
     Serial.print("Altitude:    ");
-    
-    data.Alt=bmp.pressureToAltitude(seaLevelPressure,event.pressure);
+
+    data.Alt = bmp.pressureToAltitude(seaLevelPressure, event.pressure);
+
+    data.pressure = event.pressure;
     Serial.print(bmp.pressureToAltitude(seaLevelPressure,
                                         event.pressure));
     Serial.print(" m    ");

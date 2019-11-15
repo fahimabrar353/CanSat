@@ -18,14 +18,16 @@ const byte address[6] = "00001"; // Address
 // Max size of this struct is 32 bytes - NRF24L01 buffer limit
 struct Data_Package {
   double temperature;
+  double pressure;
   byte Alt;
-  byte X;
-  byte Y;
-  byte Z;
+  byte Roll;
+  byte Pitch;
+  byte Yaw;
   byte SCount;
   float Lat;
   float Longi;
   byte Speed;
+  float Voltage;
 
 };
 Data_Package data;
