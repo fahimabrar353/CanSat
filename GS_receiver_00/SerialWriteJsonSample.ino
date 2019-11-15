@@ -32,7 +32,7 @@ void serial_loop() {
   root["temp"] = data.temperature;
   root["pressure"] = data.pressure;
   root["altitude"] = data.Alt;
-  root["battery_voltage"] = data.Voltage;
+  root["battery_voltage"] = data.Voltage/10.0;
   JsonObject gyro  = root.createNestedObject("gyro");
   gyro["roll"] = data.Roll;
   gyro["pitch"] = data.Pitch;

@@ -4,14 +4,13 @@
 #include <RF24.h>
 RF24 radio(7, 8);   // nRF24L01 (CE, CSN)
 const byte address[6] = "00001";
-unsigned long lastReceiveTime = 0;
-unsigned long currentTime = 0;
+
 // Max size of this struct is 32 bytes - NRF24L01 buffer limit
 #include "Data_Structs.h"
 
 Data_Package data; //Create a variable with the above structure
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
   radio.begin();
   radio.openReadingPipe(0, address);
   radio.setAutoAck(false);
@@ -43,5 +42,6 @@ void loop() {
 
 
     serial_loop();
+//    Serial.println(data.Voltage);
   }
 }

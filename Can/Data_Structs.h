@@ -1,17 +1,17 @@
 struct Data_Package {
   char state;
-  float temperature;
-  float pressure;
-  float Alt;
-  float Roll;
-  float Pitch;
-  float Yaw;
+  byte temperature;
+  byte pressure;
+  byte Alt;
+  byte Roll;
+  byte Pitch;
+  byte Yaw;
   byte SCount;
   uint32_t gps_t;
-  float gps_alt;
+  byte gps_alt;
   float Lat;
   float Long;
-  float Speed;
-  float Voltage;
+  byte Speed;
+  byte Voltage;
 
 };
