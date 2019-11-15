@@ -43,7 +43,7 @@ void serial_loop() {
   // Create the root of the object tree.
   JsonObject root = doc.to<JsonObject>();
   root["mission_time"] = serialized(String(mission_time));
-  root["gps_time"] = serialized(String(gps_time));
+  root["gps_time"] = serialized(String(data.gps_t));
   root["gps_location"] = serialized(gps_location);
   root["temp"] = serialized(String(data.temperature));
   root["pressure"] = serialized(String(data.pressure));

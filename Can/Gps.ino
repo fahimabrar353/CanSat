@@ -25,21 +25,20 @@ void GPSread()
     Serial.println(sc);
     
     Serial.print("Latitude:");
-    float Lat=gps.location.lat();
-    data.Lat=Lat;
-    Serial.println(Lat);
+    data.Lat=gps.location.lat();
+    Serial.println(data.Lat);
     
     Serial.print("Longitude:");
-    float Longi = gps.location.lng();
-    data.Longi=Longi;
-    Serial.println(Longi);
+    data.Longi= gps.location.lng();
+    Serial.println(data.Longi);
     
     Serial.println("Speed MPH:");
-    double Speed=gps.speed.mph();
-    data.Speed=Speed;
-    Serial.println(Speed);
-//    Serial.println("Altitude Feet:");
-//    Serial.println(gps.altitude.feet());
+    data.Speed=gps.speed.mph();
+    Serial.println(data.Speed);
+    
+    Serial.println("Altitude Feet:");
+    data.gps_alt =gps.altitude.feet();
+    Serial.println(data.gps_alt);
 //    Serial.println("");
   }
 }

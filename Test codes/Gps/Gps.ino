@@ -19,16 +19,22 @@ void loop()
   if(gps.location.isUpdated())//This will pretty much be fired all the time anyway but will at least reduce it to only after a package of NMEA data comes in
   {
     //Get the latest info from the gps object which it derived from the data sent by the GPS unit
-    Serial.println("Satellite Count:");
-    Serial.println(gps.satellites.value());
-    Serial.println("Latitude:");
-    Serial.println(gps.location.lat(), 6);
-    Serial.println("Longitude:");
-    Serial.println(gps.location.lng(), 6);
-    Serial.println("Speed MPH:");
-    Serial.println(gps.speed.mph());
-    Serial.println("Altitude Feet:");
-    Serial.println(gps.altitude.feet());
+    Serial.print("Satellite Count:");
+    Serial.print(gps.satellites.value());
+    Serial.print("  Latitude:");
+    Serial.print(gps.location.lat(), 6);
+    Serial.print("  Longitude:");
+    Serial.print(gps.location.lng(), 6);
+    Serial.print("  Speed MPH:");
+    Serial.print(gps.speed.mph());
+    Serial.print("  Altitude Feet:");
+    Serial.print(gps.altitude.feet());
+    Serial.print("  Value:");
+    uint32_t CurrentTime;
+    CurrentTime = gps.time.value(); 
+    Serial.print(CurrentTime);
+
+    
     Serial.println("");
   }
 }

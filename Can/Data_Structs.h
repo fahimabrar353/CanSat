@@ -1,4 +1,5 @@
 struct Data_Package {
+  char state;
   double temperature;
   double pressure;
   byte Alt;
@@ -6,6 +7,8 @@ struct Data_Package {
   byte Pitch;
   byte Yaw;
   byte SCount;
+  uint32_t gps_t;
+  float gps_alt;
   float Lat;
   float Longi;
   byte Speed;
