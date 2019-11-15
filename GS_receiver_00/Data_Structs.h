@@ -10,7 +10,7 @@ struct Data_Package {
   uint32_t gps_t;
   float gps_alt;
   float Lat;
-  float Longi;
+  float Long;
   byte Speed;
   float Voltage;
 
