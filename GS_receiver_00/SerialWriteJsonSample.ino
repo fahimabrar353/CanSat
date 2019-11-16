@@ -19,7 +19,7 @@ void serial_setup() {
 void serial_loop() {
 
   DynamicJsonDocument root(1024);
-  root["mission_time"] = serialized("00");
+  root["mission_time"] = serialized("0");
 
   JsonObject gps  = root.createNestedObject("gps");
   gps["lat"] = data.Lat;

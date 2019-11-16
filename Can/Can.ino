@@ -89,14 +89,15 @@ void loop() {
   Serial.print(yaw);
   data.Yaw=(100*yaw);
   Serial.print("\t\t");
-  Serial.println(deltat, 6);
+//  Serial.println(deltat, 6);
   
-  Serial.println(sizeof(Data_Package));
+ // Serial.println(sizeof(Data_Package));
   bat_loop();
 
 
   // Send the whole data from the structure to the receiver
   radio.write(&data, sizeof(Data_Package));
+  Serial.print(" packet_Size: ");
   Serial.println(sizeof(Data_Package));
 
 

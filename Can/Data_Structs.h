@@ -11,7 +11,7 @@ struct Data_Package {
   byte gps_alt;
   float Lat;
   float Long;
-  byte Speed;
+  float Speed;
   byte Voltage;
 
 };

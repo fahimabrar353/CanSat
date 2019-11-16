@@ -41,6 +41,9 @@ void GPSread()
     byte Gps = 100*gps.altitude.feet();
     data.gps_alt=Gps;
     Serial.println(data.gps_alt);
+
+    data.gps_t=gps.time.value();
+    
 //    Serial.println("");
   }
 }
